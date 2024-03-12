@@ -59,6 +59,7 @@ class ZmcLibUsing:
         ret_val = self.zmotion_lib.ZMC_Stop(self.handler)
         print(f"stop->ret_val:{ret_val}")
 
+
     def get_in_all(self):
         pi_value = ctypes.pointer(ctypes.c_uint32(0))
         ret_val = self.zmotion_lib.ZMC_GetInAll(self.handler, 1, 16, pi_value)
