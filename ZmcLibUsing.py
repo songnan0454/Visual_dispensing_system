@@ -59,7 +59,6 @@ class ZmcLibUsing:
         ret_val = self.zmotion_lib.ZMC_Stop(self.handler)
         print(f"stop->ret_val:{ret_val}")
 
-
     def get_in_all(self):
         pi_value = ctypes.pointer(ctypes.c_uint32(0))
         ret_val = self.zmotion_lib.ZMC_GetInAll(self.handler, 1, 16, pi_value)
@@ -220,6 +219,28 @@ class ZmcLibUsing:
         close_win = p_close_win.contents
         print(f"aux_direct_get_close_win->ret_val:{ret_val}, close_win:{close_win}")
         return close_win
+
+    def aux_direct_set_corner_mode(self, axis, location):
+        ret_val = self.zaux_lib.ZAux_Direct_SetCornerMode(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_corner_mode->ret_val:{ret_val}")
+
+    def aux_direct_get_corner_mode(self, axis):
+        p_corner_mode = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetCornerMode(self.handler, axis, p_corner_mode)
+        corner_mode = p_corner_mode.contents
+        print(f"aux_direct_get_corner_mode->ret_val:{ret_val}, corner_mode:{corner_mode}")
+        return corner_mode
+
+    def aux_direct_set_creep(self, axis, location):
+        ret_val = self.zaux_lib.ZAux_Direct_SetCreep(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_creep->ret_val:{ret_val}")
+
+    def aux_direct_get_creep(self, axis):
+        p_creep = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetCreep(self.handler, axis, p_creep)
+        creep = p_creep.contents
+        print(f"aux_direct_get_creep->ret_val:{ret_val}, creep:{creep}")
+        return creep
 
     def aux_trigger(self):
         ret_val = self.zaux_lib.ZAux_Trigger(self.handler)
