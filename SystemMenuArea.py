@@ -3,7 +3,7 @@ from SystemMain import *
 class SystemMenu:
     def __init__(self, win_obj):
         self.win = win_obj
-        self.title_name = "视觉点胶2系统"
+        self.title_name = "视觉点胶系统"
         self.auth = "管理人员权限"
         self.task_num = 1
         self.study_mode = "相机模式"
