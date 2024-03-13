@@ -259,6 +259,7 @@ class ZmcLibUsing:
         ret_val = self.zaux_lib.ZAux_SetIp(self.handler, ctypes.c_char_p(ip_bytes))
         print(f"aux_set_ip->ret_val:{ret_val}")
 
+
     def aux_fast_open(self, type=2, connect_str="127.0.0.1", time_out=1000):
         connect_bytes = connect_str.encode("utf-8")
         ret_val = self.zaux_lib.ZAux_FastOpen(type, connect_bytes, time_out, ctypes.pointer(self.handler))
