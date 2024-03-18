@@ -467,6 +467,447 @@ class ZmcLibUsing:
         ret_val = self.zaux_lib.Zaux_direct_set_StopAngle(self.handler, axis, ctypes.c_float(location))
         print(f"aux_direct_set_stopangle->ret_val:{ret_val}")
 
+    def aux_direct_getad(self, axis):
+        p_ad = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_AD(self.handler, axis, p_ad)
+        value = p_ad.contents
+        print(f"function_name->ret_val:{ret_val}, ad:{value}")
+        return value
+
+    def aux_direct_get_da(self, axis):
+        p_da = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_DA(self.handler, axis, p_da)
+        value = p_da.contents
+        print(f"function_name->ret_val:{ret_val}, da:{value}")
+        return value
+
+    def aux_direct_get_invertin(self, axis):
+        p_invertin = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_InvertIn(self.handler, axis, p_invertin)
+        value = p_invertin.contents
+        print(f"function_name->ret_val:{ret_val}, invertin:{value}")
+        return value
+
+    def aux_direct_get_pwmfreq(self, axis):
+        p_pwmfreq = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_PwmFreq(self.handler, axis, p_pwmfreq)
+        value = p_pwmfreq.contents
+        print(f"function_name->ret_val:{ret_val}, pwmfreq:{value}")
+        return value
+
+    def aux_direct_get_pwmduty(self, axis):
+        p_pwmduty = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_PwmDuty(self.handler, axis, p_pwmduty)
+        value = p_pwmduty.contents
+        print(f"function_name->ret_val:{ret_val}, pwmduty:{value}")
+        return value
+
+    def aux_direct_get_atype(self, axis):
+        p_atype = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Atype(self.handler, axis, p_atype)
+        value = p_atype.contents
+        print(f"function_name->ret_val:{ret_val}, atype:{value}")
+        return value
+
+    def aux_direct_get_axisstatus(self, axis):
+        p_axisstatus = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_AxisStatus(self.handler, axis, p_axisstatus)
+        value = p_axisstatus.contents
+        print(f"function_name->ret_val:{ret_val}, axisstatus:{value}")
+        return value
+
+    def aux_direct_get_axisaddress(self, axis):
+        p_axisaddress = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_AxisAddress(self.handler, axis, p_axisaddress)
+        value = p_axisaddress.contents
+        print(f"function_name->ret_val:{ret_val}, axisaddress:{value}")
+        return value
+
+    def aux_direct_get_axisenable(self, axis):
+        p_axisenable = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_AxisEnable(self.handler, axis, p_axisenable)
+        value = p_axisenable.contents
+        print(f"function_name->ret_val:{ret_val}, axisenable:{value}")
+        return value
+
+    def aux_direct_get_clutchrate(self, axis):
+        p_clutchrate = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_ClutchRate(self.handler, axis, p_clutchrate)
+        value = p_clutchrate.contents
+        print(f"function_name->ret_val:{ret_val}, clutchrate:{value}")
+        return value
+
+    def aux_direct_get_closewin(self, axis):
+        p_closewin = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_CloseWin(self.handler, axis, p_closewin)
+        value = p_closewin.contents
+        print(f"function_name->ret_val:{ret_val}, closewin:{value}")
+        return value
+
+    def aux_direct_get_cornermode(self, axis):
+        p_cornermode = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_CornerMode(self.handler, axis, p_cornermode)
+        value = p_cornermode.contents
+        print(f"function_name->ret_val:{ret_val}, cornermode:{value}")
+        return value
+
+    def aux_direct_get_decelangle(self, axis):
+        p_decelangle = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_DecelAngle(self.handler, axis, p_decelangle)
+        value = p_decelangle.contents
+        print(f"function_name->ret_val:{ret_val}, decelangle:{value}")
+        return value
+
+    def aux_direct_get_endmove(self, axis):
+        p_endmove = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_EndMove(self.handler, axis, p_endmove)
+        value = p_endmove.contents
+        print(f"function_name->ret_val:{ret_val}, endmove:{value}")
+        return value
+
+    def aux_direct_get_endmovebuffer(self, axis):
+        p_endmovebuffer = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_EndMoveBuffer(self.handler, axis, p_endmovebuffer)
+        value = p_endmovebuffer.contents
+        print(f"function_name->ret_val:{ret_val}, endmovebuffer:{value}")
+        return value
+
+    def aux_direct_get_endmovespeed(self, axis):
+        p_endmovespeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_EndMoveSpeed(self.handler, axis, p_endmovespeed)
+        value = p_endmovespeed.contents
+        print(f"function_name->ret_val:{ret_val}, endmovespeed:{value}")
+        return value
+
+    def aux_direct_get_errormask(self, axis):
+        p_errormask = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Errormask(self.handler, axis, p_errormask)
+        value = p_errormask.contents
+        print(f"function_name->ret_val:{ret_val}, errormask:{value}")
+        return value
+
+    def aux_direct_get_fastjog(self, axis):
+        p_fastjog = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FastJog(self.handler, axis, p_fastjog)
+        value = p_fastjog.contents
+        print(f"function_name->ret_val:{ret_val}, fastjog:{value}")
+        return value
+
+    def aux_direct_get_fastdec(self, axis):
+        p_fastdec = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FastDec(self.handler, axis, p_fastdec)
+        value = p_fastdec.contents
+        print(f"function_name->ret_val:{ret_val}, fastdec:{value}")
+        return value
+
+    def aux_direct_get_fe(self, axis):
+        p_fe = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Fe(self.handler, axis, p_fe)
+        value = p_fe.contents
+        print(f"function_name->ret_val:{ret_val}, fe:{value}")
+        return value
+
+    def aux_direct_get_felimit(self, axis):
+        p_felimit = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FeLimit(self.handler, axis, p_felimit)
+        value = p_felimit.contents
+        print(f"function_name->ret_val:{ret_val}, felimit:{value}")
+        return value
+
+    def aux_direct_get_ferange(self, axis):
+        p_ferange = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FeRange(self.handler, axis, p_ferange)
+        value = p_ferange.contents
+        print(f"function_name->ret_val:{ret_val}, ferange:{value}")
+        return value
+
+    def aux_direct_get_fholdin(self, axis):
+        p_fholdin = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FholdIn(self.handler, axis, p_fholdin)
+        value = p_fholdin.contents
+        print(f"function_name->ret_val:{ret_val}, fholdin:{value}")
+        return value
+
+    def aux_direct_get_fhspeed(self, axis):
+        p_fhspeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Fhspeed(self.handler, axis, p_fhspeed)
+        value = p_fhspeed.contents
+        print(f"function_name->ret_val:{ret_val}, fhspeed:{value}")
+        return value
+
+    def aux_direct_get_forcespeed(self, axis):
+        p_forcespeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_ForceSpeed(self.handler, axis, p_forcespeed)
+        value = p_forcespeed.contents
+        print(f"function_name->ret_val:{ret_val}, forcespeed:{value}")
+        return value
+
+    def aux_direct_get_fslimit(self, axis):
+        p_fslimit = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FsLimit(self.handler, axis, p_fslimit)
+        value = p_fslimit.contents
+        print(f"function_name->ret_val:{ret_val}, fslimit:{value}")
+        return value
+
+    def aux_direct_get_fullspradius(self, axis):
+        p_fullspradius = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FullSpRadius(self.handler, axis, p_fullspradius)
+        value = p_fullspradius.contents
+        print(f"function_name->ret_val:{ret_val}, fullspradius:{value}")
+        return value
+
+    def aux_direct_get_fwdin(self, axis):
+        p_fwdin = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FwdIn(self.handler, axis, p_fwdin)
+        value = p_fwdin.contents
+        print(f"function_name->ret_val:{ret_val}, fwdin:{value}")
+        return value
+
+    def aux_direct_get_fwdjog(self, axis):
+        p_fwdjog = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_FwdJog(self.handler, axis, p_fwdjog)
+        value = p_fwdjog.contents
+        print(f"function_name->ret_val:{ret_val}, fwdjog:{value}")
+        return value
+
+    def aux_direct_get_ifidle(self, axis):
+        p_ifidle = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_IfIdle(self.handler, axis, p_ifidle)
+        value = p_ifidle.contents
+        print(f"function_name->ret_val:{ret_val}, ifidle:{value}")
+        return value
+
+    def aux_direct_get_invertstep(self, axis):
+        p_invertstep = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_InvertStep(self.handler, axis, p_invertstep)
+        value = p_invertstep.contents
+        print(f"function_name->ret_val:{ret_val}, invertstep:{value}")
+        return value
+
+    def aux_direct_get_interpfactor(self, axis):
+        p_interpfactor = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_InterpFactor(self.handler, axis, p_interpfactor)
+        value = p_interpfactor.contents
+        print(f"function_name->ret_val:{ret_val}, interpfactor:{value}")
+        return value
+
+    def aux_direct_get_jogspeed(self, axis):
+        p_jogspeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_JogSpeed(self.handler, axis, p_jogspeed)
+        value = p_jogspeed.contents
+        print(f"function_name->ret_val:{ret_val}, jogspeed:{value}")
+        return value
+
+    def aux_direct_get_linkax(self, axis):
+        p_linkax = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Linkax(self.handler, axis, p_linkax)
+        value = p_linkax.contents
+        print(f"function_name->ret_val:{ret_val}, linkax:{value}")
+        return value
+
+    def aux_direct_get_loaded(self, axis):
+        p_loaded = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Loaded(self.handler, axis, p_loaded)
+        value = p_loaded.contents
+        print(f"function_name->ret_val:{ret_val}, loaded:{value}")
+        return value
+
+    def aux_direct_get_lspeed(self, axis):
+        p_lspeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Lspeed(self.handler, axis, p_lspeed)
+        value = p_lspeed.contents
+        print(f"function_name->ret_val:{ret_val}, lspeed:{value}")
+        return value
+
+    def aux_direct_get_homewait(self, axis):
+        p_homewait = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_HomeWait(self.handler, axis, p_homewait)
+        value = p_homewait.contents
+        print(f"function_name->ret_val:{ret_val}, homewait:{value}")
+        return value
+
+    def aux_direct_get_mark(self, axis):
+        p_mark = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Mark(self.handler, axis, p_mark)
+        value = p_mark.contents
+        print(f"function_name->ret_val:{ret_val}, mark:{value}")
+        return value
+
+    def aux_direct_get_markb(self, axis):
+        p_markb = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_MarkB(self.handler, axis, p_markb)
+        value = p_markb.contents
+        print(f"function_name->ret_val:{ret_val}, markb:{value}")
+        return value
+
+    def aux_direct_get_maxspeed(self, axis):
+        p_maxspeed = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_MaxSpeed(self.handler, axis, p_maxspeed)
+        value = p_maxspeed.contents
+        print(f"function_name->ret_val:{ret_val}, maxspeed:{value}")
+        return value
+
+    def aux_direct_get_merge(self, axis):
+        p_merge = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Merge(self.handler, axis, p_merge)
+        value = p_merge.contents
+        print(f"function_name->ret_val:{ret_val}, merge:{value}")
+        return value
+
+    def aux_direct_get_movesbuffered(self, axis):
+        p_movesbuffered = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_MovesBuffered(self.handler, axis, p_movesbuffered)
+        value = p_movesbuffered.contents
+        print(f"function_name->ret_val:{ret_val}, movesbuffered:{value}")
+        return value
+
+    def aux_direct_get_movecurmark(self, axis):
+        p_movecurmark = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_MoveCurmark(self.handler, axis, p_movecurmark)
+        value = p_movecurmark.contents
+        print(f"function_name->ret_val:{ret_val}, movecurmark:{value}")
+        return value
+
+    def aux_direct_get_mspeed(self, axis):
+        p_mspeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Mspeed(self.handler, axis, p_mspeed)
+        value = p_mspeed.contents
+        print(f"function_name->ret_val:{ret_val}, mspeed:{value}")
+        return value
+
+    def aux_direct_get_mtype(self, axis):
+        p_mtype = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Mtype(self.handler, axis, p_mtype)
+        value = p_mtype.contents
+        print(f"function_name->ret_val:{ret_val}, mtype:{value}")
+        return value
+
+    def aux_direct_get_offpos(self, axis):
+        p_offpos = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Offpos(self.handler, axis, p_offpos)
+        value = p_offpos.contents
+        print(f"function_name->ret_val:{ret_val}, offpos:{value}")
+        return value
+
+    def aux_direct_get_openwin(self, axis):
+        p_openwin = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_OpenWin(self.handler, axis, p_openwin)
+        value = p_openwin.contents
+        print(f"function_name->ret_val:{ret_val}, openwin:{value}")
+        return value
+
+    def aux_direct_get_regpos(self, axis):
+        p_regpos = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_RegPos(self.handler, axis, p_regpos)
+        value = p_regpos.contents
+        print(f"function_name->ret_val:{ret_val}, regpos:{value}")
+        return value
+
+    def aux_direct_get_regposb(self, axis):
+        p_regposb = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_RegPosB(self.handler, axis, p_regposb)
+        value = p_regposb.contents
+        print(f"function_name->ret_val:{ret_val}, regposb:{value}")
+        return value
+
+    def aux_direct_get_remain(self, axis):
+        p_remain = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Remain(self.handler, axis, p_remain)
+        value = p_remain.contents
+        print(f"function_name->ret_val:{ret_val}, remain:{value}")
+        return value
+
+    def aux_direct_get_remain_buffer(self, axis):
+        p_remain_buffer = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Remain_Buffer(self.handler, axis, p_remain_buffer)
+        value = p_remain_buffer.contents
+        print(f"function_name->ret_val:{ret_val}, remain_buffer:{value}")
+        return value
+
+    def aux_direct_get_openrepdist(self, axis):
+        p_openrepdist = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_OpenRepDist(self.handler, axis, p_openrepdist)
+        value = p_openrepdist.contents
+        print(f"function_name->ret_val:{ret_val}, openrepdist:{value}")
+        return value
+
+    def aux_direct_get_repoption(self, axis):
+        p_repoption = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_RepOption(self.handler, axis, p_repoption)
+        value = p_repoption.contents
+        print(f"function_name->ret_val:{ret_val}, repoption:{value}")
+        return value
+
+    def aux_direct_get_revin(self, axis):
+        p_revin = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_RevIn(self.handler, axis, p_revin)
+        value = p_revin.contents
+        print(f"function_name->ret_val:{ret_val}, revin:{value}")
+        return value
+
+    def aux_direct_get_revjog(self, axis):
+        p_revjog = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_RevJog(self.handler, axis, p_revjog)
+        value = p_revjog.contents
+        print(f"function_name->ret_val:{ret_val}, revjog:{value}")
+        return value
+
+    def aux_direct_get_rslimit(self, axis):
+        p_rslimit = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_RsLimit(self.handler, axis, p_rslimit)
+        value = p_rslimit.contents
+        print(f"function_name->ret_val:{ret_val}, rslimit:{value}")
+        return value
+
+    def aux_direct_get_sramp(self, axis):
+        p_sramp = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Sramp(self.handler, axis, p_sramp)
+        value = p_sramp.contents
+        print(f"function_name->ret_val:{ret_val}, sramp:{value}")
+        return value
+
+    def aux_direct_get_startmovespeed(self, axis):
+        p_startmovespeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_StartMoveSpeed(self.handler, axis, p_startmovespeed)
+        value = p_startmovespeed.contents
+        print(f"function_name->ret_val:{ret_val}, startmovespeed:{value}")
+        return value
+
+    def aux_direct_get_stopangle(self, axis):
+        p_stopangle = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_StopAngle(self.handler, axis, p_stopangle)
+        value = p_stopangle.contents
+        print(f"function_name->ret_val:{ret_val}, stopangle:{value}")
+        return value
+
+    def aux_direct_get_vectorbuffered(self, axis):
+        p_vectorbuffered = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_VectorBuffered(self.handler, axis, p_vectorbuffered)
+        value = p_vectorbuffered.contents
+        print(f"function_name->ret_val:{ret_val}, vectorbuffered:{value}")
+        return value
+
+    def aux_direct_get_vpspeed(self, axis):
+        p_vpspeed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_VpSpeed(self.handler, axis, p_vpspeed)
+        value = p_vpspeed.contents
+        print(f"function_name->ret_val:{ret_val}, vpspeed:{value}")
+        return value
+
+    def aux_direct_get_variablef(self, axis):
+        p_variablef = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.Zaux_direct_get_Variablef(self.handler, axis, p_variablef)
+        value = p_variablef.contents
+        print(f"function_name->ret_val:{ret_val}, variablef:{value}")
+        return value
+
+    def aux_direct_get_variableint(self, axis):
+        p_variableint = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.Zaux_direct_get_VariableInt(self.handler, axis, p_variableint)
+        value = p_variableint.contents
+        print(f"function_name->ret_val:{ret_val}, variableint:{value}")
+        return value
+
     def aux_trigger(self):
         ret_val = self.zaux_lib.ZAux_Trigger(self.handler)
         print(f"aux_trigger->ret_val:{ret_val}")
