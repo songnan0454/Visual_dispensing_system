@@ -242,6 +242,60 @@ class ZmcLibUsing:
         print(f"aux_direct_get_creep->ret_val:{ret_val}, creep:{creep}")
         return creep
 
+    def aux_direct_set_datumin(self, axis, location):
+        ret_val = self.zaux_lib.ZAux_Direct_SetDatumIn(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_datumin->ret_val:{ret_val}")
+
+    def aux_direct_get_datumin(self, axis):
+        p_datumin = ctypes.pointer(ctypes.c_int(0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetDatumIn(self.handler, axis, p_datumin)
+        datumin = p_datumin.contents
+        print(f"aux_direct_get_datumin->ret_val:{ret_val}, datumin:{datumin}")
+        return datumin
+
+    def aux_direct_set_decel_angle(self, axis, location):
+        ret_val = self.zaux_lib.ZAux_Direct_SetDecelAngle(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_decel_angle->ret_val:{ret_val}")
+
+    def aux_direct_get_decel_angle(self, axis):
+        p_decel_angle = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetDecelAngle(self.handler, axis, p_decel_angle)
+        decel_angle = p_decel_angle.contents
+        print(f"aux_direct_get_decel_angle->ret_val:{ret_val}, decel_angle:{decel_angle}")
+        return decel_angle
+
+    def aux_direct_get_encoder(self, axis):
+        p_encoder = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetEncoder(self.handler, axis, p_encoder)
+        encoder = p_encoder.contents
+        print(f"aux_direct_get_encoder->ret_val:{ret_val}, encoder:{encoder}")
+        return encoder
+
+    def aux_direct_get_end_move(self, axis):
+        p_end_move = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetEndMove(self.handler, axis, p_end_move)
+        encoder = p_end_move.contents
+        print(f"aux_direct_get_end_move->ret_val:{ret_val}, encoder:{encoder}")
+        return encoder
+
+    def aux_direct_get_end_move_buffer(self, axis):
+        p_end_move_buffer = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetEndMoveBuffer(self.handler, axis, p_end_move_buffer)
+        end_move_buffer = p_end_move_buffer.contents
+        print(f"aux_direct_get_end_move_buffer->ret_val:{ret_val}, end_move_buffer:{end_move_buffer}")
+        return end_move_buffer
+
+    def aux_direct_set_end_move_speed(self, axis, location):
+        ret_val = self.zaux_lib.ZAux_Direct_SetEndMoveSpeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_end_move_speed->ret_val:{ret_val}")
+
+    def aux_direct_get_end_move_speed(self, axis):
+        p_end_move_speed = ctypes.pointer(ctypes.c_float(0.0))
+        ret_val = self.zaux_lib.ZAux_Direct_GetEndMoveSpeed(self.handler, axis, p_end_move_speed)
+        end_move_speed = p_end_move_speed.contents
+        print(f"aux_direct_get_end_move_speed->ret_val:{ret_val}, end_move_speed:{end_move_speed}")
+        return end_move_speed
+
     def aux_trigger(self):
         ret_val = self.zaux_lib.ZAux_Trigger(self.handler)
         print(f"aux_trigger->ret_val:{ret_val}")
