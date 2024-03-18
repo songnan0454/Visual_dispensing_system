@@ -296,6 +296,177 @@ class ZmcLibUsing:
         print(f"aux_direct_get_end_move_speed->ret_val:{ret_val}, end_move_speed:{end_move_speed}")
         return end_move_speed
 
+    def aux_direct_set_da(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_DA(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_da->ret_val:{ret_val}")
+
+
+    def aux_direct_set_invertin(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_InvertIn(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_invertin->ret_val:{ret_val}")
+
+
+    def aux_direct_set_pwmfreq(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_PwmFreq(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_pwmfreq->ret_val:{ret_val}")
+
+
+    def aux_direct_set_pwmduty(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_PwmDuty(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_pwmduty->ret_val:{ret_val}")
+
+    def aux_direct_set_atype(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Atype(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_atype->ret_val:{ret_val}")
+
+    def aux_direct_set_axisaddress(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_AxisAddress(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_axisaddress->ret_val:{ret_val}")
+
+    def aux_direct_set_axisenable(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_AxisEnable(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_axisenable->ret_val:{ret_val}")
+
+    def aux_direct_set_clutchrate(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_ClutchRate(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_clutchrate->ret_val:{ret_val}")
+
+    def aux_direct_set_closewin(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_CloseWin(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_closewin->ret_val:{ret_val}")
+
+    def aux_direct_set_cornermode(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_CornerMode(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_cornermode->ret_val:{ret_val}")
+
+    def aux_direct_set_decelangle(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_DecelAngle(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_decelangle->ret_val:{ret_val}")
+
+    def aux_direct_set_endmovespeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_EndMoveSpeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_endmovespeed->ret_val:{ret_val}")
+
+    def aux_direct_set_errormask(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Errormask(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_errormask->ret_val:{ret_val}")
+
+    def aux_direct_set_fastjog(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FastJog(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_fastjog->ret_val:{ret_val}")
+
+    def aux_direct_set_fastdec(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FastDec(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_fastdec->ret_val:{ret_val}")
+
+    def aux_direct_set_felimit(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FeLimit(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_felimit->ret_val:{ret_val}")
+
+    def aux_direct_set_frange(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FRange(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_frange->ret_val:{ret_val}")
+
+    def aux_direct_set_fholdin(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FholdIn(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_fholdin->ret_val:{ret_val}")
+
+    def aux_direct_set_fhspeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Fhspeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_fhspeed->ret_val:{ret_val}")
+
+    def aux_direct_set_forcespeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_ForceSpeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_forcespeed->ret_val:{ret_val}")
+
+    def aux_direct_set_fslimit(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FsLimit(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_fslimit->ret_val:{ret_val}")
+
+    def aux_direct_set_fullspradius(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FullSpRadius(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_fullspradius->ret_val:{ret_val}")
+
+    def aux_direct_set_fwdin(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FwdIn(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_fwdin->ret_val:{ret_val}")
+
+    def aux_direct_set_fwdjog(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_FwdJog(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_fwdjog->ret_val:{ret_val}")
+
+    def aux_direct_set_invertstep(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_InvertStep(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_invertstep->ret_val:{ret_val}")
+
+    def aux_direct_set_interpfactor(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_InterpFactor(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_interpfactor->ret_val:{ret_val}")
+
+    def aux_direct_set_jogspeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_JogSpeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_jogspeed->ret_val:{ret_val}")
+
+    def aux_direct_set_lspeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Lspeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_lspeed->ret_val:{ret_val}")
+
+    def aux_direct_set_homewait(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_HomeWait(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_homewait->ret_val:{ret_val}")
+
+    def aux_direct_set_maxspeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_MaxSpeed(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_maxspeed->ret_val:{ret_val}")
+
+    def aux_direct_set_merge(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Merge(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_merge->ret_val:{ret_val}")
+
+    def aux_direct_set_movemark(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Movemark(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_movemark->ret_val:{ret_val}")
+
+    def aux_direct_set_offpos(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Offpos(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_offpos->ret_val:{ret_val}")
+
+    def aux_direct_set_openwin(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_OpenWin(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_openwin->ret_val:{ret_val}")
+
+    def aux_direct_set_repdist(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_RepDist(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_repdist->ret_val:{ret_val}")
+
+    def aux_direct_set_repoption(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_RepOption(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_repoption->ret_val:{ret_val}")
+
+    def aux_direct_set_revin(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_RevIn(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_revin->ret_val:{ret_val}")
+
+    def aux_direct_set_revjog(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_RevJog(self.handler, axis, ctypes.c_int(location))
+        print(f"aux_direct_set_revjog->ret_val:{ret_val}")
+
+    def aux_direct_set_rslimit(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_RsLimit(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_rslimit->ret_val:{ret_val}")
+
+    def aux_direct_set_sramp(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_Sramp(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_sramp->ret_val:{ret_val}")
+
+    def aux_direct_set_startmovespeed(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_StartMoveSpeed(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_startmovespeed->ret_val:{ret_val}")
+
+    def aux_direct_set_stopangle(self, axis, location):
+        ret_val = self.zaux_lib.Zaux_direct_set_StopAngle(self.handler, axis, ctypes.c_float(location))
+        print(f"aux_direct_set_stopangle->ret_val:{ret_val}")
+
     def aux_trigger(self):
         ret_val = self.zaux_lib.ZAux_Trigger(self.handler)
         print(f"aux_trigger->ret_val:{ret_val}")
